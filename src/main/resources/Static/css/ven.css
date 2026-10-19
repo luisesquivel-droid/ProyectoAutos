@@ -1,0 +1,258 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("/img/descarga.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================================
+   ESTILOS LOGIN
+   ========================================= */
+#vista-login {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.logo-area {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.logo-img {
+    width: 250px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0px 2px 4px rgba(255, 255, 255, 0.4));
+}
+
+.login-box {
+    width: 100%;
+    max-width: 340px;
+    margin-left: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar-container {
+    width: 110px;
+    height: 110px;
+    background-color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.avatar-icon {
+    font-size: 55px;
+    color: #f5f5f5;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 13px 20px;
+    background-color: rgba(0, 0, 0, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    color: #ffffff;
+    font-size: 1rem;
+    text-align: center;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.input-group input::placeholder {
+    color: #e5e5e5;
+    font-weight: 500;
+}
+
+.input-group input:focus {
+    background-color: #000000;
+    border-color: #888;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-submit {
+    margin-top: 8px;
+    padding: 11px 0;
+    background: #111;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn-submit:hover {
+    background: #2b2b2b;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+
+/* =========================================
+   ESTILOS PANEL VENDEDOR
+   ========================================= */
+#vista-vendedor {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #1e2b37;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 15px;
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.4);
+    z-index: 5;
+}
+
+.sidebar-logo {
+    width: 160px;
+    height: auto;
+    margin-bottom: 25px;
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.4));
+}
+
+.sidebar-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nav-btn {
+    width: 100%;
+    padding: 12px 10px;
+    background-color: #3b4e60;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: #4f667d;
+}
+
+.nav-btn.active {
+    background-color: #556c84;
+    outline: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-logout {
+    margin-top: 30px;
+    background-color: #121920;
+}
+
+.main-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 40px;
+}
+
+.search-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.search-bar {
+    width: 60%;
+    max-width: 550px;
+    background-color: rgba(195, 218, 230, 0.95);
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    padding: 10px 22px;
+    gap: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.search-bar i {
+    font-size: 1.2rem;
+    color: #1e2b37;
+}
+
+.search-bar input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e2b37;
+}
+
+.tab-content {
+    display: none;
+    flex: 1;
+}
+
+.tab-content.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.placeholder-box {
+    background-color: rgba(30, 43, 55, 0.75);
+    backdrop-filter: blur(5px);
+    padding: 30px 50px;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 900px) {
+    .login-box {
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 30px 20px;
+        border-radius: 20px;
+    }
+}
