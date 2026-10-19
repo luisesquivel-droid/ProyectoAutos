@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Prestige Autos</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
+    <nav class="navbar" id="barra-nav">
+        <div class="logo"><img src="/img/logo.png" alt="Logo"></div>
+        <div class="nav-links">
+            <a href="#" onclick="mostrarVista('vista-inicio')">Inicio</a>
+            <a href="#" onclick="mostrarVista('vista-catalogo')">Catálogo</a>
+            <a href="#" onclick="mostrarVista('vista-perfil')">Mi perfil</a>
+            <a href="#" onclick="mostrarVista('vista-cotizacion')">Cotización</a>
+        </div>
+        <div class="nav-user" onclick="mostrarVista('vista-perfil')">👤 Mi Perfil</div>
+    </nav>
+
+    <!-- ================= VISTA 1: INICIO ================= -->
+    <div id="vista-inicio" class="vista">
+        
+        <!-- Hero con efecto de transparencia -->
+        <header class="hero-transparente">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" alt="Porsche" class="auto-imagen-fondo">
+            <div class="capa-transparencia"></div>
+            <div class="contenido-hero-encima">
+                <p class="marca-letra-cursiva">Luis Prestige Autos</p>
+                <h2 class="titulo-principal-hero">
+                    TUS SUEÑOS EN EL VOLANTE SE VUELVEN EN UN FUTURO DEL CONDUCIR
+                </h2>
+                <button class="btn-explorar-hero" onclick="mostrarVista('vista-catalogo')">
+                    explorar catálogo
+                </button>
+            </div>
+        </header>
+
+        <!-- SECCIÓN DE SELECTOR DE COLORES Y DESCRIPCIÓN (Ahora vive dentro del Inicio) -->
+        <div class="seccion-colores-auto">
+            
+            <!-- Opción 1: Auto Azul Oscuro -->
+            <div class="tarjeta-color-opcion" onclick="cambiarAuto('/img/porse azul oscuro.png','Porsche - Edición Midnight', 'Un tono profundo y elegante para los amantes de la velocidad nocturna.')">
+                <img src="/img/porse azul oscuro.png" alt="Auto Azul Oscuro">
+            </div>
+
+            <!-- Opción 2: Auto Azul Claro / Eléctrico -->
+            <div class="tarjeta-color-opcion" onclick="cambiarAuto('/img/porshe azul claro.png', 'Porsche - Edición Veloce', 'Un gran auto para conducir grandes distancias no te pierdas esta.')">
+                <img src="/img/porshe azul claro.png" alt="Auto Azul Claro">
+            </div>
+
+            <!-- CAJA DE INFORMACIÓN Y VISOR DINÁMICO DE LA DERECHA -->
+            <div id="caja-info-auto" class="tarjeta-info-dinamica" style="background-color: white;">
+                <img id="imagen-auto-cambiante" src="/img/porshe azul claro.png" alt="Auto Seleccionado" class="img-dinamica-grande">
+                <div class="texto-info-dinamica">
+                    <h2 id="titulo-auto-cambiante">Porsche</h2>
+                    <p id="desc-auto-cambiante">un gran auto para conducir grandes distancias no te pierdas esta</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= VISTA 2: CATÁLOGO ================= -->
+    <div id="vista-catalogo" class="vista" style="display: none;">
+        <div class="catalogo-layout">
+            <!-- Filtros laterales -->
+            <aside class="filtros">
+                <h3>Filtros</h3>
+                <label>Marca:</label>
+                <select><option>Seleccionar</option></select>
+                <label>Modelo:</label>
+                <select><option>Seleccionar</option></select>
+                <label>Color:</label>
+                <select><option>Seleccionar</option></select>
+                <h4>Carros</h4>
+                <label><input type="checkbox"> Nuevos</label><br>
+                <label><input type="checkbox"> Semi-Nuevos</label>
+            </aside>
+            
+            <!-- Productos -->
+            <main class="grid-autos">
+                <h2>Catálogo</h2>
+                <input type="text" placeholder="🔍 Buscar..." class="buscador">
+                <div class="autos-cards">
+                    <!-- Aquí irán las tarjetas de tu catálogo en el futuro -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- ================= VISTA 3: VEHÍCULO SELECCIONADO ================= -->
+    <div id="vista-vehiculo" class="vista" style="display: none;">
+        <div class="detalle-vehiculo">
+            <button onclick="mostrarVista('vista-catalogo')">⬅ Volver</button>
+            <h2>Vehículo Seleccionado ⭐</h2>
+            <div class="info-seleccion">
+                <img id="img-seleccionada" src="" alt="Auto seleccionado" width="300">
+                <div>
+                    <h3 id="nombre-auto-sel">Modelo</h3>
+                    <p><strong>Niv:</strong> 1ZRCASDDW21243RFT32RF4</p>
+                    <p><strong>Color:</strong> Azul</p>
+                    <p id="precio-auto-sel" class="precio"></p>
+                </div>
+            </div>
+            <button class="btn-cotizar" onclick="mostrarVista('vista-cotizacion')">Solicitar cotización</button>
+        </div>
+    </div>
+
+    <!-- ================= VISTA 4: COTIZACIÓN ================= -->
+    <div id="vista-cotizacion" class="vista" style="display: none;">
+        <div class="cotizacion-contenedor">
+            <button onclick="mostrarVista('vista-vehiculo')">⬅</button>
+            <h2>Cotización</h2>
+            
+            <div class="form-cotizacion">
+                <div>
+                    <h4>Información personal</h4>
+                    <input type="text" placeholder="Username" value="Luis Esquivel">
+                    <input type="email" placeholder="E-mail" value="luis@uam.mx">
+                    <input type="text" placeholder="Teléfono" value="5512345678">
+                </div>
+                <div>
+                    <h4>Auto seleccionado</h4>
+                    <p id="cotiz-nombre"><em>Ningún vehículo seleccionado</em></p>
+                    <p id="cotiz-precio"></p>
+                    <p id="cotiz-niv"></p>
+                    <p id="cotiz-color"></p>
+                    <p id="cotiz-estatus" style="color: #64748b;">Estatus: Sin cotización previa</p>
+                </div>
+                <div>
+                    <h4>Método de pago</h4>
+                    <label><input type="radio" name="pago"> Contado</label>
+                    <label><input type="radio" name="pago"> Crédito</label>
+                    <br><br>
+                    <label>Seleccionar fecha disponible:</label>
+                    <input type="date">
+                </div>
+            </div>
+            <button class="btn-enviar" onclick="enviarCotizacion()">Enviar solicitud</button>
+        </div>
+    </div>
+
+    <!-- ================= VISTA 5: MI PERFIL ================= -->
+    <div id="vista-perfil" class="vista" style="display: none;">
+        <div class="perfil-contenedor">
+            <button onclick="mostrarVista('vista-inicio')">⬅</button>
+            <h2>Mi Perfil</h2>
+            <div class="avatar-perfil">👤</div>
+            <h3>Luis Esquivel</h3>
+
+            <div class="perfil-opciones">
+                <button>Configuración de Cuenta</button>
+                <button>Mis Citas ></button>
+                <button>Mis Vehículos Favoritos ></button>
+            </div>
+            
+            <button class="btn-cerrar" onclick="mostrarVista('vista-inicio')">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
