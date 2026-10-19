@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Prestige Autos</title>
+    <link rel="stylesheet" href="css/ven.css">
+</head>
+<body>
+
+<!-- PANTALLA 1: LOGIN -->
+<div id="vista-login">
+    <header class="logo-area">
+        <img src="img/logo.png" alt="Luis Prestige Autos" class="logo-img">
+    </header>
+
+    <main class="login-box">
+        <div class="avatar-container">
+            <i class="fa-solid fa-user avatar-icon"></i>
+        </div>
+
+        <form id="loginForm" class="login-form">
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Usuario:" autocomplete="off" required>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Contraseña:" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Ingresar</button>
+        </form>
+    </main>
+</div>
+
+<!-- PANTALLA 2: PANEL VENDEDOR -->
+<div id="vista-vendedor" class="hidden">
+    <!-- Barra lateral -->
+    <aside class="sidebar">
+        <img src="img/logo.png" alt="Logo" class="sidebar-logo">
+
+        <nav class="sidebar-nav">
+            <button class="nav-btn active" onclick="cambiarPestana('perfil', this)">
+                Perfil<br>Ortiz Yael
+            </button>
+            <button class="nav-btn" onclick="cambiarPestana('citas', this)">
+                Citas
+            </button>
+            <button class="nav-btn" onclick="cambiarPestana('cotizaciones', this)">
+                Cotizaciones
+            </button>
+            <button class="nav-btn" onclick="cambiarPestana('documentacion', this)">
+                Documentación
+            </button>
+            <button type="button" class="nav-btn btn-logout" onclick="cerrarSesion()">
+                Cerrar sesión
+            </button>
+        </nav>
+    </aside>
+
+    <!-- Área principal -->
+    <main class="main-panel">
+        <header class="search-header">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Buscar auto, cliente...">
+            </div>
+        </header>
+
+        <!-- Vistas vacías listas para recibir datos -->
+        <section id="tab-perfil" class="tab-content active">
+            <div class="placeholder-box">
+                <p>Vista: Autos Asignados / Perfil</p>
+            </div>
+        </section>
+
+        <section id="tab-citas" class="tab-content">
+            <div class="placeholder-box">
+                <p>Vista: Citas Pendientes</p>
+            </div>
+        </section>
+
+        <section id="tab-cotizaciones" class="tab-content">
+            <div class="placeholder-box">
+                <p>Vista: Cotizaciones</p>
+            </div>
+        </section>
+
+        <section id="tab-documentacion" class="tab-content">
+            <div class="placeholder-box">
+                <p>Vista: Documentación</p>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="js/vendedor.js"></script>
+</body>
+</html>
