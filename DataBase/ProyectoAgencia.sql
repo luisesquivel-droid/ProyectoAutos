@@ -27,7 +27,7 @@ CREATE TABLE clientes (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table almacen
+-- Table almacenController
 -- -----------------------------------------------------
 CREATE TABLE almacen (
   idalmacen INT NOT NULL AUTO_INCREMENT,
@@ -59,7 +59,7 @@ CREATE TABLE vehiculos (
 ) ENGINE = InnoDB;
 
 -- -----------------------------------------------------
--- Table calificaciones
+-- Table calificacionesController
 -- -----------------------------------------------------
 CREATE TABLE calificaciones (
   idcalificaciones INT NOT NULL AUTO_INCREMENT,
