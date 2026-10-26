@@ -34,7 +34,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `almacen`
+-- Table `almacenController`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `almacen` ;
 
@@ -69,7 +69,7 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `calificaciones`
+-- Table `calificacionesController`
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `calificaciones` ;
 
@@ -122,3 +122,10 @@ SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 SELECT * FROM clientes;
 INSERT INTO clientes (clientes.idclientes,nombre, email, telefono, password) VALUES ('1','Luis', 'luis@gmail.com', '5534785467', 'silese');
+
+
+
+USE proyecto;
+
+ALTER TABLE almacen
+    MODIFY COLUMN idalmacen BIGINT NOT NULL AUTO_INCREMENT;
