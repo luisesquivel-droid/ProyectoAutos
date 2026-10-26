@@ -1,12 +1,12 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #EAF2F8; /* Fondo solicitado */
+    background-color: #EAF2F8;
     margin: 0;
     padding: 0;
     color: #333;
 }
 
-/* Barra de navegación */
+
 .navbar {
     background-color: #ffffff;
     display: flex;
@@ -30,7 +30,7 @@ body {
     border-radius: 4px;
 }
 
-/* Vistas (Ocultar/Mostrar) */
+
 .vista {
     padding: 30px;
     max-width: 900px;
@@ -40,16 +40,12 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
-/* ========================================= */
-/* ESTILOS PARA RECREAR LA TRANSPARENCIA DEL MOCKUP */
-/* ========================================= */
-
 .hero-transparente {
-    position: relative; /* Contenedor padre de referencia */
+    position: relative;
     width: 100%;
-    max-width: 1000px; /* Ancho máximo para que no se vea gigantesco */
+    max-width: 1000px;
     margin: 0 auto;
-    overflow: hidden; /* Corta la imagen si sale del borde */
+    overflow: hidden;
     border-radius: 6px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
@@ -58,57 +54,54 @@ body {
     width: 100%;
     display: block;
     height: auto;
-    /* La imagen se mantiene al 100% de opacidad para que no se vea borrosa */
 }
 
-/* ESTA ES LA CLAVE DEL EFECTO */
+
 .capa-transparencia {
-    position: absolute; /* Se coloca encima del padre */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Color azulado semitransparente del mockup (con RGBA) */
-    background-color: rgba(69, 114, 150, 0.45); /* 45% de opacidad del azul */
-    z-index: 1; /* Nivel 1, por encima de la imagen */
+    background-color: rgba(69, 114, 150, 0.45);
+    z-index: 1;
 }
 
 .contenido-hero-encima {
-    position: absolute; /* Se coloca encima de la capa de transparencia */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2; /* Nivel 2, por encima de la capa de transparencia */
+    z-index: 2;
     display: flex;
-    flex-direction: column; /* Acomoda el contenido en columna */
-    padding: 30px; /* Margen interior */
-    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    flex-direction: column;
+    padding: 30px;
+    box-sizing: border-box;
 }
 
 /* Estilos de Texto */
 .marca-letra-cursiva {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    font-style: italic; /* Letra cursiva como en el mockup */
+    font-style: italic;
     font-size: 1.4rem;
-    color: #111; /* Color de texto oscuro para legibilidad */
+    color: #111;
     margin: 0 0 10px 0;
 }
 
 .titulo-principal-hero {
     font-size: 1.6rem;
-    color: #000; /* Texto negro */
+    color: #000;
     margin: 0;
-    max-width: 350px; /* Limita el ancho del título para que no rebase */
+    max-width: 350px;
     line-height: 1.2;
-    text-align: left; /* Alineado a la izquierda */
+    text-align: left;
 }
 
-/* El Botón de Explorar Catálogo */
 .btn-explorar-hero {
-    background-color: #a7bbcc; /* Color azul grisáceo del botón */
-    color: #000; /* Texto negro */
-    border: 1px solid #111; /* Borde oscuro */
+    background-color: #a7bbcc;
+    color: #000;
+    border: 1px solid #111;
     padding: 10px 15px;
     font-size: 1rem;
     cursor: pointer;
@@ -116,20 +109,20 @@ body {
     border-radius: 4px;
     font-weight: normal;
     
-    /* Acomodo exacto: Posicionamiento absoluto dentro de su contenedor de texto */
+
     position: absolute;
-    bottom: 30px; /* Separación del borde inferior */
-    left: 30px; /* Separación del borde izquierdo */
-    width: 160px; /* Ancho del botón */
-    z-index: 3; /* Nivel 3, por encima de todo */
+    bottom: 30px;
+    left: 30px;
+    width: 160px;
+    z-index: 3;
     transition: background 0.2s;
 }
 
 .btn-explorar-hero:hover {
-    background-color: #8fa3b4; /* Color más oscuro al pasar el mouse */
+    background-color: #8fa3b4;
 }
 
-/* Catálogo */
+
 .catalogo-layout {
     display: flex;
     gap: 20px;
@@ -179,7 +172,7 @@ body {
     object-fit: cover;
 }
 
-/* Vehículo seleccionado y Cotización */
+
 .detalle-vehiculo, .cotizacion-contenedor, .perfil-contenedor {
     text-align: left;
 }

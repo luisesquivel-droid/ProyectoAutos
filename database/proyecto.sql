@@ -120,5 +120,5 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-INSERT INTO clientes (clientes.idclientes,nombre, email, telefono, password) VALUES ('0','Luis', 'luis@gmail.com', '5534785467', 'silese');
 SELECT * FROM clientes;
+INSERT INTO clientes (clientes.idclientes,nombre, email, telefono, password) VALUES ('1','Luis', 'luis@gmail.com', '5534785467', 'silese');

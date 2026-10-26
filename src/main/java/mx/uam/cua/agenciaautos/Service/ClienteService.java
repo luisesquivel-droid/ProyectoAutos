@@ -1,7 +1,16 @@
 package mx.uam.cua.agenciaautos.Service;
 
-import mx.uam.cua.agenciaautos.DTO.DTOclientes;
+import mx.uam.cua.agenciaautos.DTO.ClientesDTO;
+
+import java.util.List;
 
 public interface ClienteService {
-    DTOclientes save(DTOclientes dtoclientes);
+
+    ClientesDTO save(ClientesDTO clientesDTO);
+
+    List<ClientesDTO>findAll();
+
+    List<ClientesDTO>findByNombre(String nombre);
+
+    ClientesDTO findById(Long idclientes);
 }

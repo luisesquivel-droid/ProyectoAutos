@@ -1,0 +1,58 @@
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="Stylesheet" href="/css/style.css">
+</head>
+<body>
+<nav class="navbar" id="barra-nav">
+    <div class="logo"><img src="/img/logo.png" alt="Logo"></div>
+    <div class="nav-links">
+        <a href="#" onclick="mostrarVista('vista-inicio')">Inicio</a>
+        <a href="#" onclick="mostrarVista('vista-catalogo')">Catálogo</a>
+    </div>
+    <div class="nav-user" onclick="mostrarVista('vista-perfil')">👤 Mi Perfil</div>
+</nav>
+<main class="dashboard contenido">
+
+    <section class="profile">
+        <div class="avatar">
+            <img src="/img/perfil.jpg" alt="Foto de perfil">
+        </div>
+
+        <div class="info-card">
+            <p>-LUIS</p>
+            <p>-GERENTE</p>
+            <p>-luis67@gmail.com</p>
+            <p>-5567696661</p>
+            <p>-Santa Fe</p>
+        </div>
+    </section>
+
+    <section class="estadistiacas">
+        <div class="cajaEstadistica">
+            <span class="tituloEstadistica">Vehiculos en inventario</span>
+            <span class="valor-Estadistica">67</span>
+        </div>
+
+        <div class="cajaEstadistica">
+            <span class="tituloEstadistica">Ventas del Mes</span>
+            <span class="valor-Estadistica">14</span>
+        </div>
+
+        <div class="cajaEstadistica">
+            <span class="tituloEstadistica">Meta Del Mes</span>
+            <div class="progreso">
+                <div class="cantidad-progreso" style="width: 25%"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="acciones">
+        <button onclick="location.href='GesVehiculos.html'">Gestionar Vehiculos</button>
+        <button onclick="location.href='GesPersonal.html'">Gestionar Personal</button>
+    </section>
+</main>
+</body>
+</html>

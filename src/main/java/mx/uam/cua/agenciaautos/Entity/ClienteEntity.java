@@ -7,18 +7,15 @@ import jakarta.persistence.*;
 public class ClienteEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "idclientes")
     private Long idclientes;
-
-    @Column(name = "nombre",nullable = false)
+    @Column(name = "nombre", nullable = false)
     private String nombre;
-
-    @Column(name = "email",nullable = false)
+    @Column(name = "email")
     private String email;
-
-    @Column(name = "telefono",nullable = false)
+    @Column(name = "telefono")
     private String telefono;
-
-    @Column(name = "password",nullable = false)
+    @Column(name = "password")
     private String password;
 
     public Long getIdclientes() {

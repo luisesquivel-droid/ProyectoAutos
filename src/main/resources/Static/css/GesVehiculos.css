@@ -1,0 +1,213 @@
+:root {
+    --azul-marino: #1e2d45;
+    --azul-acero: #8ba9c5;
+    --azul-claro: #e9f0f8;
+    --fondo-encabezado: #f3f6fb;
+    --verde: #7ed957;
+    --rojo: #ff5757;
+    --azul-boton: #004aad;
+    --gris-texto: #6b6b6b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Open Sans", "Segoe UI", Arial, sans-serif;
+    background: #fff;
+}
+.navbar {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    border-bottom: 2px solid #93c5fd;
+}
+
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #1e3a8a;
+    font-weight: bold;
+}
+
+.nav-user {
+    cursor: pointer;
+    background: #bfdbfe;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.encabezado {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    padding: 10px 30px;
+    background: var(--fondo-encabezado);
+    border-top: 4px solid #8c52ff;
+}
+
+.encabezado__logo { height: 90px; }
+
+.menu {
+    display: flex;
+    gap: 120px;
+}
+
+.menu__enlace {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.contenido {
+    position: relative;
+    isolation: isolate;
+    min-height: calc(100vh - 110px);
+    padding: 50px 60px;
+}
+
+.contenido::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: var(--azul-acero);
+    clip-path: polygon(0 0, 84% 0, 100% 100%, 0 100%);
+}
+
+.contenido::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 23%;
+    z-index: -1;
+    background: var(--azul-marino);
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 50px;
+    row-gap: 60px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.caja-imagen {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 330px;
+    padding: 20px;
+    background: var(--azul-claro);
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.caja-imagen__vista {
+    width: 70%;
+    max-height: 240px;
+    object-fit: contain;
+}
+
+.caja-imagen__vista--cargada {
+    width: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+.caja-imagen__texto {
+    font-size: 1.6rem;
+    color: var(--gris-texto);
+}
+
+.caja-imagen__entrada {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.caja-imagen:focus-within {
+    outline: 3px solid var(--azul-boton);
+    outline-offset: 3px;
+}
+
+
+.campos {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding-top: 10px;
+}
+
+.campo {
+    width: 100%;
+    padding: 6px 20px;
+    font-family: inherit;
+    font-size: 1.6rem;
+    text-align: center;
+    color: var(--gris-texto);
+    background: var(--azul-claro);
+    border: none;
+    border-radius: 30px;
+}
+
+.campo::placeholder { color: var(--gris-texto); }
+
+.campo:focus {
+    outline: 3px solid var(--azul-boton);
+    outline-offset: 2px;
+}
+
+.acciones {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+}
+
+.boton {
+    width: 100%;
+    padding: 4px 20px;
+    font-family: inherit;
+    font-size: 1.8rem;
+    color: #000;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: filter 0.15s;
+}
+
+.boton:hover { filter: brightness(0.92); }
+
+.boton:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 3px;
+}
+
+.boton--publicar { background: var(--verde); }
+.boton--cancelar { background: var(--rojo); }
+.boton--editar   { background: var(--azul-boton); color: #000; }
+
+@media (max-width: 900px) {
+    .encabezado,
+    .menu { gap: 24px; flex-wrap: wrap; }
+    .menu__enlace { font-size: 1.3rem; }
+
+    .contenido { padding: 30px 20px; }
+    .contenido::before { width: 100%; height: 60px; bottom: auto; }
+    .contenido::after { clip-path: none; }
+
+    .formulario { grid-template-columns: 1fr; row-gap: 30px; }
+    .caja-imagen, .campos { grid-column: 1; }
+    .acciones { grid-template-columns: 1fr; gap: 16px; }
+}

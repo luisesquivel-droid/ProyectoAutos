@@ -1,6 +1,6 @@
 package mx.uam.cua.agenciaautos.DTO;
 
-public class DTOclientes {
+public class ClientesDTO {
     private Long idclientes;
     private String nombre;
     private String email;
