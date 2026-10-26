@@ -1,0 +1,63 @@
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Gestion Personal</title>
+    <link rel="Stylesheet" href="css/GesPersonal.css">
+</head>
+<body>
+<nav class="navbar" id="barra-nav">
+    <div class="logo"><img src="/img/logo.png" alt="Logo"></div>
+    <div class="nav-links">
+        <a href="#" onclick="mostrarVista('vista-inicio')">Inicio</a>
+        <a href="#" onclick="mostrarVista('vista-catalogo')">Catálogo</a>
+    </div>
+    <div class="nav-user" onclick="location.href='Gerente.html'">👤 Mi Perfil</div>
+</nav>
+<main class="contenido">
+    <form class="formulario" id="formularioPersonal" action="/v1/vehiculos" method="post" enctype="multipart/form-data">
+
+        <label class="caja-imagen" for="imagen">
+            <img class="caja-imagen__vista" id="vistaPrevia" src="/img/perfil.jpg" alt="Vista previa de la imagen">
+            <span class="caja-imagen__texto">Inserta Imagen</span>
+            <input class="caja-imagen__entrada" type="file" id="imagen" name="imagen" accept="image/png, image/jpeg">
+        </label>
+
+        <div class="campos">
+            <input class="campo" type="text"   name="nombre"      placeholder="Nombre"        required>
+            <input class="campo" type="text"   name="apelldos"     placeholder="Apellidos"     required>
+            <input class="campo" type="email" name="correo"        placeholder="Correo"        required>
+            <input class="campo" type="text" name="puesto"      placeholder="Puesto"        required>
+            <input class="campo" type="tel"   name="telefono" placeholder="Telefono"      required>
+        </div>
+
+        <div class="acciones">
+            <button class="boton boton--publicar" type="submit">Publicar</button>
+            <button class="boton boton--cancelar" type="reset" id="botonCancelar">Cancelar</button>
+            <button class="boton boton--editar"   type="submit" formaction="/v1/vehiculos/editar">Editar</button>
+        </div>
+
+    </form>
+</main>
+
+<script>
+    // Muestra la imagen elegida dentro del recuadro
+    const entradaImagen = document.getElementById('imagen');
+    const vistaPrevia = document.getElementById('vistaPrevia');
+    const imagenInicial = vistaPrevia.getAttribute('src');
+
+    entradaImagen.addEventListener('change', () => {
+        const archivo = entradaImagen.files[0];
+        if (archivo) {
+            vistaPrevia.src = URL.createObjectURL(archivo);
+            vistaPrevia.classList.add('caja-imagen__vista--cargada');
+        }
+    });
+
+    // Cancelar: limpia los campos y restaura la imagen
+    document.getElementById('formularioVehiculo').addEventListener('reset', () => {
+        vistaPrevia.src = imagenInicial;
+        vistaPrevia.classList.remove('caja-imagen__vista--cargada');
+    });
+</script>
+</body>
+</html>
